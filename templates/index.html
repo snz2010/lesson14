@@ -1,0 +1,51 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 14 - Строим запросы к таблице с данными "Netflix"</title>
+    <link href="/static/styles.min.css" rel="stylesheet">
+</head>
+<body>
+<main class="container">
+
+    <h2>Работаем с базой "Netflix"</h2><hr>
+
+    <h3>1. Поиск по названию:</h3>
+    <div class="search">
+      <form action="/movie" class="search__form">
+        <input name="title" type="search" class="search__input" value="Введите название фильма">
+      </form>
+    </div>
+
+    <h3>2. Поиск по годам выпуска:</h3>
+    <div class="search">
+      <form action="/between" class="search__form" method="get">
+          <table>
+              <tr>
+                  <td><h4>От года:</h4></td>
+                  <td><input name="min_year" type="text" size="5" class="search__input" value="1979"></td>
+              </tr>
+                <tr>
+                <td><h4>До года:</h4></td>
+                <td><input name="max_year" type="text" size="5" class="search__input" value="1982"></td>
+                </tr>
+              <tr><td><input type="submit" name="button" value="Найти"></td></tr>
+          </table>
+      </form>
+    </div>
+
+    <h3>3. Поиск по рейтингу:</h3>
+
+    <p><h4><a href="/rating/?rating=children">3.1 Детские фильмы</a></h4></p>
+    <p><h4><a href="/rating/?rating=family">3.2 Фильмы для семейного просмотра</a></h4></p>
+    <p><h4><a href="/rating/?rating=adult">3.3 Фильмы для взрослых</a></h4></p>
+
+    <h3>4. Поиск по жанру:</h3>
+
+    <p><h4><a href="/genre/?genre=Movie">4.1 Самые свежие 10 фильмов</a></h4></p>
+    <p><h4><a href="/genre/?genre=TV Show">4.2 Самые свежие 10 сериалов</a></h4></p>
+
+    <hr><p><a href="/">Вернуться на главную</a></p>
+</main>
+</body>
+</html>

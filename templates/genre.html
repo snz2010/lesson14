@@ -1,0 +1,27 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 14 - Строим запросы к таблице с данными "Netflix"</title>
+    <link href="/static/styles.min.css" rel="stylesheet">
+</head>
+<body>
+<main class="container">
+
+    <h2>Результаты поиска:</h2>
+    <hr>
+    {% if films %}
+    <table>
+    {% for film in films %}
+
+        <tr><td><b>Название:</b></td>      <td>{{ film.title }}</td></tr>
+        <tr><td>Описание:</td>          <td>{{ film.description }}</td></tr>
+
+    {% endfor %}
+    </table>
+    {% endif %}
+    <hr>
+    <p><a href="/">Вернуться на главную</a></p>
+</main>
+</body>
+</html>
